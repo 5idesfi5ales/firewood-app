@@ -4,3 +4,4 @@ altair==5.5.0
 pandas
 requests
 openai
+gunicorn
