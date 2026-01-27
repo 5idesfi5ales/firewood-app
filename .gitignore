@@ -1,0 +1,10 @@
+# Logic: Ignore the file where the keys live
+.env
+
+# Logic: Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Logic: Ignore your virtual environment
+venv/
+.venv/
