@@ -142,7 +142,7 @@ if __name__ == "__main__":
         if save_to_airtable(final_data):
             print(f"✅ Saved: {final_data['Real Name']}")
         else:
-            print(f"❌ Failed to save {final_data['Real Name']}")
+            print(f"❌ Failed to save record for scenario {i}")
 
     print("\nDONE! Go check your Airtable.")
 
