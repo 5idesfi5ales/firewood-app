@@ -140,7 +140,7 @@ if __name__ == "__main__":
         final_data = normalize_data(ai_data)
         
         if save_to_airtable(final_data):
-            print(f"✅ Saved: {final_data['Real Name']}")
+            print(f"✅ Saved record for scenario {i}")
         else:
             print(f"❌ Failed to save record for scenario {i}")
 
