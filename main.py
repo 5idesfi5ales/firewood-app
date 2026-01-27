@@ -97,7 +97,15 @@ def save_to_airtable(normalized_data):
     fields = {k: v for k, v in normalized_data.items() if v is not None}
     payload = {"fields": fields}
 
-    print(f"\n--- SENDING TO AIRTABLE ---\n{json.dumps(payload, indent=2)}")
+    # Avoid logging sensitive data such as phone numbers; log only a redacted view
+    redacted_fields = {}
+    for k, v in fields.items():
+        if k in ("Phone",):
+            redacted_fields[k] = "***REDACTED***"
+        else:
+            redacted_fields[k] = v
+    redacted_payload = {"fields": redacted_fields}
+    print(f"\n--- SENDING TO AIRTABLE (REDACTED) ---\n{json.dumps(redacted_payload, indent=2)}")
 
     response = requests.post(url, headers=headers, json=payload)
 
