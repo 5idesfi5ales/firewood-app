@@ -17,7 +17,7 @@ def verify():
     challenge = request.args.get('hub.challenge')
 
     if mode == 'subscribe' and token == VERIFY_TOKEN:
-        return challenge, 200
+        return app.response_class(challenge or "", status=200, mimetype='text/plain')
     else:
         return 'Verification failed', 403
 
